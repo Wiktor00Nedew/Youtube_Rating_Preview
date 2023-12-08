@@ -1,0 +1,36 @@
+{
+    "name": "Youtube rating preview",
+    "version": "1.0.0",
+    "description": "Little extension that allows you see what is like and dislike count, before even clicking on the video on Youtube",
+    "permissions": ["tabs", "storage"],
+    "host_permissions": [
+        "https://*.youtube.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://*.youtube.com/*"
+            ],
+            "js": ["content_script.js"],
+            "css": ["styles.css"]
+        }
+    ],
+    "web_accessible_resources": [
+        {
+            "resources": [
+                "assets/like.png",
+                "assets/dislike.png"
+            ],
+            "matches": ["https://*.youtube.com/*"]
+        }
+    ],
+    "action": {
+        
+        "default_title": "Youtube rating preview",
+        "defautl_popup": "popup.html"
+    },
+    "manifest_version": 3
+}

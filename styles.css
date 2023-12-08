@@ -1,0 +1,28 @@
+.rating-popup {
+    position: absolute;
+    padding: 10px;
+    border-radius: 12px;
+    display: block;
+    background-color: rgb(148, 148, 148);
+    width: 100px;
+    height: 50px;
+    z-index: 100;
+    opacity: 0.8;   
+}
+
+.popup-image {
+    width: 20px;
+    height: 20px;
+}
+
+.popup-textbox {
+    text-align: right;
+    font-weight: bolder;
+    color: whitesmoke;
+    font-size: 14px;
+    padding: 3px;
+}
+
+.popup-table {
+    width: 100%;
+}
