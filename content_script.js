@@ -50,6 +50,7 @@
 
         if (obj[id]){
             let data = JSON.parse(obj[id]);
+            console.log("storage");
                 
             if (Date.now() - data.time < limit) {
                 popup_textbox_likes.innerHTML = data.likes;
@@ -64,7 +65,7 @@
         fetch("https://returnyoutubedislikeapi.com/votes?videoId=" + id)
             .then((res) => res.json())
             .then((data) => {
-
+                console.log("api");
                 const rating = {
                     time: Date.now(),
                     likes: data.likes,
