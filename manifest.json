@@ -1,5 +1,5 @@
 {
-    "name": "Youtube rating preview",
+    "name": "Youtube rating preview (dev)",
     "version": "1.0.0",
     "description": "Little extension that allows you see what is like and dislike counts, before even clicking on the video on Youtube",
     "permissions": ["tabs", "storage"],
