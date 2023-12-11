@@ -47,16 +47,12 @@
         popup_textbox_dislikes.innerHTML = "loading...";
 
         chrome.storage.sync.get([id], (obj) => {
-            //console.log("here???");
             if (obj[id]){
-                //console.log("here 2 !!!!");
                 let data = JSON.parse(obj[id]);
-                //console.log("storage moment");
-                //console.log(Date.now() - data.time);
+                
                 if (Date.now() - data.time < limit) {
                     popup_textbox_likes.innerHTML = data.likes;
                     popup_textbox_dislikes.innerHTML = data.dislikes;
-                    //console.log("data inserted");
                     data_inserted = true;
                 }
             }
@@ -64,21 +60,14 @@
                 fetch("https://returnyoutubedislikeapi.com/votes?videoId=" + id)
                     .then((res) => res.json())
                     .then((data) => {
-                        //console.log("here goes api");
-                        //console.log(data.likes + "    " + data.dislikes);
-
-                        //console.log("rating fault for sure");
-
                         const rating = {
                             time: Date.now(),
                             likes: data.likes,
                             dislikes: data.dislikes
                         };
-                        
-                        //console.log("json fault");
 
                         let string = JSON.stringify(rating);
-                        //console.log("surely its chrome, right?");
+                    
                         chrome.storage.sync.set({
                             [id]: string
                         }).then(() => {
